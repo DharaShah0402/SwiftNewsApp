@@ -10,3 +10,5 @@
 
 * I tried to modularised the code in a way that each layer has dependency injection and can be tested separately with minor change and mocking objects, however as of now, haven’t included any unit or integration testing in the project.
 
+* pod files are included.
+
