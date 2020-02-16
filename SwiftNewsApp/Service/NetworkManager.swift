@@ -56,13 +56,6 @@ class NetworkManager: NetworkManagerDataProviding {
     var defaultSession: URLSession {
        return URLSession(configuration: .default)
     }
-    
-    var urlComponents: URLComponents {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "s3.amazonaws.com"
-        return urlComponents
-    }
 
     func request(path: String, completion: @escaping NetworkCallCompletion) {
                 
