@@ -18,7 +18,7 @@ protocol NewsViewModelDelegate {
 
 class MainViewModel {
     
-    private let serviceManager: MainServiceManager
+    private let serviceManager: MainServiceManagerDataProviding
     private var loadingState: LoadingState = .loading
     var delegate: NewsViewModelDelegate?
     private var news: [Article]?
@@ -30,7 +30,7 @@ class MainViewModel {
         case completed
     }
     
-    init(serviceManager: MainServiceManager = MainServiceManager()) {
+    init(serviceManager: MainServiceManagerDataProviding = MainServiceManager()) {
         self.serviceManager = serviceManager
     }
     
@@ -65,18 +65,20 @@ class MainViewModel {
         }
     }
     
-    func fetchNews() {
+    func fetchNews(completion: (() -> Void)? = nil) {
         self.loadingState = .loading
         serviceManager.fetchNews { [weak self]  response, error in
-            guard let news = response?.articles else {
+            guard error == nil, let news = response?.articles else {
                 self?.loadingState = .error(message: error?.description ?? "Something went wrong")
                 self?.delegate?.updateView()
+                completion?()
                 return
             }
             
             self?.loadingState = news.count > 0 ? .completed : .empty
             self?.news = news
             self?.delegate?.updateView()
+            completion?()
         }
     }
 }

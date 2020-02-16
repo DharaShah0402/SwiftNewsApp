@@ -42,7 +42,11 @@ enum Result<String>{
 
 public typealias NetworkCallCompletion = (_ data: Data?, _ error: NetworkError?) -> ()
 
-class NetworkManager {
+protocol NetworkManagerDataProviding {
+    func request(path: String, completion: @escaping NetworkCallCompletion)
+}
+
+class NetworkManager: NetworkManagerDataProviding {
     let baseUrl: String = "https://www.reddit.com/"
     
     var urlSession: URLSession  {

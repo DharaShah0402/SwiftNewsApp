@@ -24,10 +24,14 @@ enum NewsServiceError {
     }
 }
 
-struct MainServiceManager {
-    let networkManager: NetworkManager
+protocol MainServiceManagerDataProviding {
+    func fetchNews(completion: @escaping (SwiftResponse?, NewsServiceError?) -> Void)
+}
+
+struct MainServiceManager: MainServiceManagerDataProviding {
+    let networkManager: NetworkManagerDataProviding
     
-    init(networkManager: NetworkManager = NetworkManager()) {
+    init(networkManager: NetworkManagerDataProviding = NetworkManager()) {
         self.networkManager = networkManager
     }
     
@@ -41,7 +45,7 @@ struct MainServiceManager {
             let decoder = JSONDecoder()
             do {
                 let news = try decoder.decode(SwiftResponse.self, from: data)
-                completion(news, .noData)
+                completion(news, nil)
             } catch {
                 completion(nil, .unableToDecode)
             }

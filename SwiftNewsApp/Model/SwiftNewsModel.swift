@@ -24,6 +24,7 @@ extension SwiftResponse: Decodable {
     }
 }
 
+
 struct Article {
     let title: String
     let body: String?

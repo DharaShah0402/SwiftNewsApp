@@ -10,6 +10,9 @@
 		00A3688546C78F3DC2D886BE /* Pods_SwiftNewsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B48E30D8A963256F4A6AA5A /* Pods_SwiftNewsAppTests.framework */; };
 		2FBDD9AC501EEADC94E98C64 /* Pods_SwiftNewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79537E63D537514B168F9C82 /* Pods_SwiftNewsApp.framework */; };
 		401CD04E23F3750D005E1E59 /* FullScreenMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401CD04D23F3750D005E1E59 /* FullScreenMessageTableViewCell.swift */; };
+		EE13105E23F99C8900D6ACEA /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13105D23F99C8900D6ACEA /* MainViewModelTests.swift */; };
+		EE13106023F9CD3200D6ACEA /* ServiceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE13105F23F9CD3200D6ACEA /* ServiceManagerTests.swift */; };
+		EE13106223F9D04F00D6ACEA /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = EE13106123F9D04F00D6ACEA /* data.json */; };
 		EEA25CDB23F33E84003DA1EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA25CDA23F33E84003DA1EC /* AppDelegate.swift */; };
 		EEA25CE023F33E84003DA1EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEA25CDE23F33E84003DA1EC /* Main.storyboard */; };
 		EEA25CE223F33E87003DA1EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA25CE123F33E87003DA1EC /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 		7257EEB09BFED80BC11655C2 /* Pods-SwiftNewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNewsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftNewsApp/Pods-SwiftNewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		79537E63D537514B168F9C82 /* Pods_SwiftNewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftNewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B891FA2E3C82068EF641CEB8 /* Pods-SwiftNewsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftNewsAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftNewsAppTests/Pods-SwiftNewsAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		EE13105D23F99C8900D6ACEA /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		EE13105F23F9CD3200D6ACEA /* ServiceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagerTests.swift; sourceTree = "<group>"; };
+		EE13106123F9D04F00D6ACEA /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		EEA25CD723F33E84003DA1EC /* SwiftNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA25CDA23F33E84003DA1EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEA25CDF23F33E84003DA1EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,8 +149,11 @@
 		EEA25CEE23F33E87003DA1EC /* SwiftNewsAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				EE13106123F9D04F00D6ACEA /* data.json */,
 				EEA25CEF23F33E87003DA1EC /* SwiftNewsAppTests.swift */,
 				EEA25CF123F33E87003DA1EC /* Info.plist */,
+				EE13105D23F99C8900D6ACEA /* MainViewModelTests.swift */,
+				EE13105F23F9CD3200D6ACEA /* ServiceManagerTests.swift */,
 			);
 			path = SwiftNewsAppTests;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE13106223F9D04F00D6ACEA /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +380,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE13106023F9CD3200D6ACEA /* ServiceManagerTests.swift in Sources */,
 				EEA25CF023F33E87003DA1EC /* SwiftNewsAppTests.swift in Sources */,
+				EE13105E23F99C8900D6ACEA /* MainViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
